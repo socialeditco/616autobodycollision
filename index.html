@@ -8,13 +8,16 @@
   <meta property="og:title" content="616 Autobody & Collision | Grand Rapids Auto Body Demo">
   <meta property="og:description" content="Premium static website demo for 616 Autobody & Collision in Grand Rapids, Michigan with quote and appointment CTAs.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWZiYXhtYjgxYTVrM2M1Z3oxY2ljN2xtOHppejZkdzJwY3V5ZG9xdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/E47ZiADDv6KPaKfhHD/giphy.gif">
+  <meta property="og:image" content="https://ql2wtms7wwxspiex.public.blob.vercel-storage.com/hero-desktop.gif">
   <meta property="og:url" content="https://socialeditco.github.io/616autobodycollision/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Orbitron:wght@700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="brand-assets.css">
   <link rel="stylesheet" href="hero-canva.css">
   <script type="application/ld+json">
   {
@@ -57,6 +60,7 @@
     </nav>
     <div class="header-actions">
       <a class="btn" href="contact.html">Get a Quote</a>
+      <a class="btn btn-header-appointment" href="contact.html#appointment">Book Appointment</a>
       <button class="menu-toggle" type="button" data-menu-toggle aria-label="Open menu" aria-controls="mobileDrawer" aria-expanded="false">
         <span class="hamburger"><span></span></span>
       </button>
@@ -89,17 +93,17 @@
     </nav>
     <div class="drawer-cta-grid">
       <a class="btn btn-wide" href="contact.html">Get a Quote</a>
-      <a class="btn btn-ghost btn-wide" href="contact.html#appointment">Book Appointment</a>
+      <a class="btn btn-wide" href="contact.html#appointment">Book Appointment</a>
     </div>
   </div>
 </aside>
 <main id="main">
 <section class="hero-canva-wrap" aria-label="616 Autobody animated hero">
   <div class="canva-hero-embed canva-hero-desktop" aria-label="Desktop animated hero">
-    <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWZiYXhtYjgxYTVrM2M1Z3oxY2ljN2xtOHppejZkdzJwY3V5ZG9xdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/E47ZiADDv6KPaKfhHD/giphy.gif" alt="616 Autobody animated all-time towing hero" loading="eager" decoding="async">
+    <img src="https://ql2wtms7wwxspiex.public.blob.vercel-storage.com/hero-desktop.gif" alt="616 Autobody animated desktop hero" loading="eager" decoding="async" fetchpriority="high" onerror="this.onerror=null;this.src='assets/hero-desktop.png';">
   </div>
   <div class="canva-hero-embed canva-hero-mobile" aria-label="Mobile animated hero">
-    <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdnJuNmNsbmtldGY2aTZsNWJna2E4N3dsY243bDlsNnJjc3FiMDZvMSZlcD12MV9pbnRlcmFsfGdpZl9ieV9pZCZjdD1a/DDj3Wl7Y3ceKjFp4pd/giphy.gif" alt="616 Autobody mobile animated hero" loading="eager" decoding="async">
+    <img src="https://ql2wtms7wwxspiex.public.blob.vercel-storage.com/hero_mobile.gif.gif" alt="616 Autobody animated mobile hero" loading="eager" decoding="async" fetchpriority="high" onerror="this.onerror=null;this.src='assets/hero-mobile.png';">
   </div>
   <div class="hero-intro">
     <div class="container" data-reveal>
@@ -123,10 +127,13 @@
         <p>From minor parking-lot dings to larger collision repairs, this demo positions 616 Autobody as a calm, capable, detail-obsessed shop that helps customers move from damage to done without friction.</p>
         <p>Customers can request an estimate, choose a preferred appointment time, and understand the repair process before they ever pick up the phone.</p>
       </div>
-      <div class="stats-grid" aria-label="Shop highlights">
-        <div class="stat-box"><span class="stat-number">15+</span><span class="stat-label">Years Experience</span></div>
-        <div class="stat-box"><span class="stat-number">1,000+</span><span class="stat-label">Cars Repaired</span></div>
-        <div class="stat-box"><span class="stat-number">Lifetime</span><span class="stat-label">Warranty Focus</span></div>
+      <div class="stats-column">
+        <div class="client-note stats-note">(YOUR STATS GO HERE)</div>
+        <div class="stats-grid" aria-label="Shop highlights">
+          <div class="stat-box"><span class="stat-number">15+</span><span class="stat-label">Years Experience</span></div>
+          <div class="stat-box"><span class="stat-number">1,000+</span><span class="stat-label">Cars Repaired</span></div>
+          <div class="stat-box"><span class="stat-number">Lifetime</span><span class="stat-label">Warranty Focus</span></div>
+        </div>
       </div>
     </div>
   </div>
@@ -164,6 +171,35 @@
           <a class="card-link" href="services.html#dent">Explore service <span>→</span></a>
         </div>
       </article>
+
+      <article class="service-card card service-placeholder-card" data-reveal>
+        <div class="service-placeholder-media" aria-hidden="true">
+          <span>Add image</span>
+        </div>
+        <div class="service-card-body">
+          <h3>Add description</h3>
+          <p class="client-note">If you have more services you want to add, we can easily include them here.</p>
+          <a class="card-link" href="contact.html">Add service details <span>→</span></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<section class="section alt mini-gallery-section">
+  <div class="container">
+    <div class="section-heading" data-reveal>
+      <span class="eyebrow">Before &amp; After</span>
+      <h2>Recent repair transformations.</h2>
+      <p class="lead">This homepage preview pulls from the main gallery so the full gallery can stay as the single place to update repair examples.</p>
+    </div>
+    <div class="gallery-grid mini-gallery-grid" data-mini-gallery data-mini-gallery-limit="4">
+      <div class="card mini-gallery-loading">Loading gallery preview...</div>
+    </div>
+    <div class="mini-gallery-actions" data-reveal>
+      <a class="btn" href="gallery.html">View Full Gallery</a>
+      <p class="client-note backend-note">Optional backend: we can add an admin-style image manager so you or your team can add, remove, and reorder gallery images without editing code.</p>
     </div>
   </div>
 </section>
@@ -234,6 +270,7 @@
     <div class="footer-bottom">
       <span>© <span data-year></span> 616 Autobody &amp; Collision. Demo website only.</span>
       <span>Built as a static HTML/CSS/JS visual proposal.</span>
+      <span>Preview site built by Social Edit Co.</span>
     </div>
   </div>
 </footer>
@@ -241,5 +278,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/flatpickr" defer></script>
 <script src="script.js" defer></script>
+<script src="mini-gallery.js" defer></script>
 </body>
 </html>
