@@ -1,1 +1,445 @@
-(function(){'use strict';var d=document,w=window,rm=w.matchMedia('(prefers-reduced-motion: reduce)').matches,HG={desktop:'https://ql2wtms7wwxspiex.public.blob.vercel-storage.com/hero-desktop.gif',mobile:'https://ql2wtms7wwxspiex.public.blob.vercel-storage.com/hero_mobile.gif.gif'},HF={desktop:'assets/hero-desktop.png',mobile:'assets/hero-mobile.png'};inject();d.addEventListener('DOMContentLoaded',function(){year();active();brand();hero();head();drawer();smooth();slider();home();contactNotes();miniGallery();reveals();ba();lightbox();forms();picker()});function q(s,r){return(r||d).querySelector(s)}function qa(s,r){return Array.prototype.slice.call((r||d).querySelectorAll(s))}function inject(){if(q('#sec-enhancement-styles'))return;var s=d.createElement('style');s.id='sec-enhancement-styles';s.textContent=`.logo{position:relative;display:inline-flex;align-items:center;justify-content:flex-start;gap:0;min-width:0;width:260px;height:66px;flex:0 0 auto;overflow:hidden}.logo::before{content:'';display:block;width:100%;height:100%;background:url(assets/logo-desktop.png) center left/contain no-repeat}.logo .logo-mark,.logo .logo-text{display:none!important}.site-header .logo{width:255px;height:65px}.mobile-drawer .logo{width:235px;height:60px}.site-footer .logo{width:320px;height:82px}.btn-header-appointment{display:inline-flex}.canva-hero-embed img{opacity:1!important;pointer-events:auto!important}.client-note{color:var(--accent);font-family:var(--font-heading);font-size:.78rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase;line-height:1.55}.stats-column{display:grid;gap:14px}.stats-note{text-align:left}.service-placeholder-card{border:1px dashed rgba(204,0,0,.6);background:linear-gradient(135deg,rgba(204,0,0,.1),rgba(255,255,255,.035)),var(--surface)}.service-placeholder-media{height:240px;display:grid;place-items:center;background:repeating-linear-gradient(135deg,rgba(255,255,255,.05) 0,rgba(255,255,255,.05) 12px,rgba(204,0,0,.08) 12px,rgba(204,0,0,.08) 24px),var(--surface-2);border-bottom:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.78);font-family:var(--font-heading);font-weight:900;letter-spacing:.12em;text-transform:uppercase;text-align:center}.mini-gallery-section .section-heading{margin-bottom:36px}.mini-gallery-grid{margin-top:10px}.mini-gallery-loading{grid-column:1/-1;text-align:center;color:var(--muted)}.mini-gallery-actions{display:grid;justify-items:center;gap:18px;margin-top:34px;text-align:center}.backend-note{max-width:820px;color:var(--muted);font-family:var(--font-body);font-size:.95rem;font-weight:700;letter-spacing:0;text-transform:none}.backend-note strong{display:block;color:var(--accent);font-family:var(--font-heading);letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px}.custom-form-note{margin-top:22px;padding:20px;border:1px dashed rgba(204,0,0,.5);border-radius:16px;background:rgba(204,0,0,.08)}.custom-form-note strong{display:block;color:#fff;font-family:var(--font-heading);letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}.custom-form-note p+p{margin-top:10px}.site-footer .footer-bottom span:last-child{color:rgba(255,255,255,.8)}@media(max-width:980px){.site-header .logo{width:215px;height:55px}.desktop-nav{gap:18px}.header-actions .btn{padding-inline:18px}}@media(max-width:760px){.header-actions .btn{display:none}.site-header .logo,.mobile-drawer .logo{width:190px;height:48px}.site-header .logo::before,.mobile-drawer .logo::before{background-image:url(assets/logo-mobile.png)}.site-footer .logo{width:260px;height:66px}.drawer-cta-grid .btn{background:var(--accent)!important;border-color:rgba(204,0,0,.55)!important;color:#fff!important}.stats-note{text-align:center}.service-placeholder-media{height:210px}}@media(max-width:420px){.site-header .logo,.mobile-drawer .logo{width:164px;height:42px}}`;d.head.appendChild(s);if(!q('link[rel=icon]')){var i=d.createElement('link');i.rel='icon';i.type='image/png';i.href='assets/favicon.png';d.head.appendChild(i)}}function year(){qa('[data-year]').forEach(function(e){e.textContent=new Date().getFullYear()})}function active(){var p=d.body.dataset.page||'home';qa('[data-nav-page]').forEach(function(a){if(a.dataset.navPage===p){a.classList.add('is-active');a.setAttribute('aria-current','page')}})}function brand(){qa('.header-actions').forEach(function(h){if(q('.btn-header-appointment',h))return;var quote=q('a.btn[href$=contact.html]',h),menu=q('[data-menu-toggle]',h);if(quote&&menu){var a=d.createElement('a');a.className='btn btn-header-appointment';a.href='contact.html#appointment';a.textContent='Book Appointment';h.insertBefore(a,menu)}});qa('.drawer-cta-grid .btn').forEach(function(b){b.classList.remove('btn-ghost')});qa('.footer-bottom').forEach(function(f){if(f.textContent.indexOf('Preview site built by Social Edit Co.')>-1)return;var s=d.createElement('span');s.textContent='Preview site built by Social Edit Co.';f.appendChild(s)})}function hero(){var de=q('.canva-hero-desktop img'),mo=q('.canva-hero-mobile img');if(de){de.src=HG.desktop;de.alt='616 Autobody animated desktop hero';de.onerror=function(){de.onerror=null;de.src=HF.desktop}}if(mo){mo.src=HG.mobile;mo.alt='616 Autobody animated mobile hero';mo.onerror=function(){mo.onerror=null;mo.src=HF.mobile}}}function home(){if((d.body.dataset.page||'')!=='home')return;stats();placeholder();miniShell()}function stats(){var c=q('.intro-card'),g=c&&q('.stats-grid',c);if(!c||!g||q('.stats-note',c))return;var w=d.createElement('div'),n=d.createElement('div');w.className='stats-column';n.className='client-note stats-note';n.textContent='(YOUR STATS GO HERE)';g.parentNode.insertBefore(w,g);w.appendChild(n);w.appendChild(g)}function placeholder(){var h=qa('.section-heading h2').filter(function(x){return x.textContent.toLowerCase().indexOf('repair services built around')>-1})[0],sec=h&&h.closest('.section'),grid=sec&&q('.card-grid',sec);if(!grid||q('.service-placeholder-card',grid))return;var a=d.createElement('article');a.className='service-card card service-placeholder-card';a.setAttribute('data-reveal','');a.innerHTML=`<div class='service-placeholder-media' aria-hidden='true'><span>Add image</span></div><div class='service-card-body'><h3>Add image and service</h3><p class='client-note'>We can add any additional services that you offer in this area.</p><a class='card-link' href='contact.html'>Add service details <span>→</span></a></div>`;grid.appendChild(a)}function miniShell(){if(q('[data-mini-gallery]'))return;var c=q('.cta-band'),sec=c&&c.closest('.section');if(!sec||!sec.parentNode)return;var m=d.createElement('section');m.className='section alt mini-gallery-section';m.innerHTML=`<div class='container'><div class='section-heading' data-reveal><span class='eyebrow'>Before &amp; After</span><h2>Recent repair transformations.</h2><p class='lead'>This homepage preview pulls from the main gallery so the full gallery can stay as the single place to update repair examples.</p></div><div class='gallery-grid mini-gallery-grid' data-mini-gallery data-mini-gallery-limit='4'><div class='card mini-gallery-loading'>Loading gallery preview...</div></div><div class='mini-gallery-actions' data-reveal><a class='btn' href='gallery.html'>View Full Gallery</a><p class='backend-note'><strong>Optional backend available.</strong> We can add an admin-style image manager so you or your team can add, remove, and reorder gallery images without editing code.</p></div></div>`;sec.parentNode.insertBefore(m,sec)}function contactNotes(){if((d.body.dataset.page||'')!=='contact')return;var c=q('.contact-copy');if(c&&!q('.custom-form-note',c)){var n=d.createElement('div');n.className='custom-form-note';n.innerHTML=`<strong>Client customization note:</strong><p>These quote and appointment fields can be customized for the shop's real workflow, including image uploads, VIN, license plate, insurance claim number, preferred communication method, vehicle drop-off needs, and any other details you want customers to provide up front.</p><p>We can also add a backend if preferred, giving the owner or staff a simple place to review submissions and add, remove, or manage gallery images without touching the website code.</p>`;c.insertBefore(n,q('.benefit-list',c)||null)}var f=q('.form-note');if(f&&f.textContent.indexOf('photo uploads')<0)f.textContent='Demo only: no information is stored, submitted, emailed, or added to a calendar. Final quote and appointment forms can include photo uploads, VIN, insurance details, and any custom fields the shop wants.'}function miniGallery(){var t=q('[data-mini-gallery]');if(!t)return;var lim=Number(t.dataset.miniGalleryLimit||4);fetch('gallery.html',{cache:'no-store'}).then(function(r){if(!r.ok)throw Error();return r.text()}).then(function(html){var p=new DOMParser(),doc=p.parseFromString(html,'text/html'),cards=qa('.gallery-grid .ba-card',doc).slice(0,lim);t.innerHTML='';if(!cards.length){t.innerHTML=`<div class='card mini-gallery-loading'>Gallery preview will appear here once before-and-after projects are added.</div>`;return}cards.forEach(function(card){var cl=card.cloneNode(true);cl.removeAttribute('data-reveal');cl.removeAttribute('data-ba-card');qa('[data-reveal]',cl).forEach(function(e){e.removeAttribute('data-reveal')});qa('[data-ba-card]',cl).forEach(function(e){e.removeAttribute('data-ba-card')});qa('button.ba-panel',cl).forEach(function(b){var a=d.createElement('a');a.href='gallery.html';a.className=b.className;a.setAttribute('data-label',b.getAttribute('data-label')||'Gallery');a.setAttribute('aria-label','View full before and after gallery');a.innerHTML=b.innerHTML;b.replaceWith(a)});t.appendChild(cl)})}).catch(function(){t.innerHTML=`<div class='card mini-gallery-loading'>Before-and-after preview is ready for client gallery images.</div>`})}function head(){var h=q('.site-header');if(!h)return;function u(){h.classList.toggle('is-scrolled',w.scrollY>6)}u();w.addEventListener('scroll',u,{passive:true})}function drawer(){var tog=q('[data-menu-toggle]'),cl=q('[data-drawer-close]'),ov=q('[data-drawer-overlay]'),dr=q('[data-mobile-drawer]');if(!tog||!dr)return;function open(){d.body.classList.add('drawer-open');tog.setAttribute('aria-expanded','true');dr.setAttribute('aria-hidden','false');var f=q('a,button',dr);if(f)setTimeout(function(){f.focus()},80)}function close(){d.body.classList.remove('drawer-open');tog.setAttribute('aria-expanded','false');dr.setAttribute('aria-hidden','true');tog.focus({preventScroll:true})}tog.addEventListener('click',open);if(cl)cl.addEventListener('click',close);if(ov)ov.addEventListener('click',close);qa('[data-mobile-drawer] a').forEach(function(a){a.addEventListener('click',function(){d.body.classList.remove('drawer-open');tog.setAttribute('aria-expanded','false');dr.setAttribute('aria-hidden','true')})});d.addEventListener('keydown',function(e){if(e.key==='Escape'&&d.body.classList.contains('drawer-open'))close()})}function smooth(){var h=q('.site-header');qa('a').forEach(function(a){var href=a.getAttribute('href')||'';if(href.charAt(0)!=='#'||href==='#')return;a.addEventListener('click',function(e){var tar=q(href);if(!tar)return;e.preventDefault();w.scrollTo({top:tar.getBoundingClientRect().top+w.scrollY-(h?h.offsetHeight+16:0),behavior:rm?'auto':'smooth'});history.pushState(null,'',href)})})}function slider(){var sl=q('[data-hero-slider]');if(!sl)return;var slides=qa('[data-slide]',sl),dots=qa('[data-slide-dot]',sl),prev=q('[data-slide-prev]',sl),next=q('[data-slide-next]',sl),cur=0,t;function show(i){cur=(i+slides.length)%slides.length;slides.forEach(function(s,n){var a=n===cur;s.classList.toggle('is-active',a);s.setAttribute('aria-hidden',String(!a))});dots.forEach(function(b,n){b.classList.toggle('is-active',n===cur);b.setAttribute('aria-selected',String(n===cur))})}function restart(){if(t)clearInterval(t);t=setInterval(function(){show(cur+1)},5000)}if(prev)prev.addEventListener('click',function(){show(cur-1);restart()});if(next)next.addEventListener('click',function(){show(cur+1);restart()});dots.forEach(function(b,n){b.addEventListener('click',function(){show(n);restart()})});show(0);if(!rm)restart()}function reveals(){if(rm||!w.gsap)return;if(w.ScrollTrigger)w.gsap.registerPlugin(w.ScrollTrigger);qa('[data-reveal]').forEach(function(el){w.gsap.fromTo(el,{autoAlpha:0,y:34,scale:.985},{autoAlpha:1,y:0,scale:1,duration:.75,ease:'power2.out',scrollTrigger:w.ScrollTrigger?{trigger:el,start:'top 82%',once:true}:undefined})})}function ba(){if(rm||!w.gsap||!w.ScrollTrigger)return;w.gsap.registerPlugin(w.ScrollTrigger);qa('[data-ba-card]').forEach(function(c){var b=q('.ba-before img',c),a=q('.ba-after img',c);if(!b||!a)return;w.gsap.set(b,{yPercent:100});w.gsap.set(a,{yPercent:-100});w.gsap.timeline({scrollTrigger:{trigger:c,start:'top 78%',once:true}}).to(b,{yPercent:0,duration:1.05,ease:'power3.out'},0).to(a,{yPercent:0,duration:1.05,ease:'power3.out'},.08)})}function lightbox(){var lb=q('[data-lightbox]'),img=q('[data-lightbox-image]'),close=q('[data-lightbox-close]');if(!lb||!img)return;var last;function open(src,alt){last=d.activeElement;img.src=src;img.alt=alt||'Gallery image';lb.classList.add('is-open');lb.setAttribute('aria-hidden','false');d.body.style.overflow='hidden';if(close)close.focus()}function shut(){lb.classList.remove('is-open');lb.setAttribute('aria-hidden','true');img.removeAttribute('src');d.body.style.overflow='';if(last&&last.focus)last.focus({preventScroll:true})}qa('[data-lightbox-src]').forEach(function(tr){tr.addEventListener('click',function(){var im=q('img',tr),src=tr.dataset.lightboxSrc||(im?im.src:''),alt=tr.dataset.lightboxAlt||(im?im.alt:'');if(src)open(src,alt)})});if(close)close.addEventListener('click',shut);lb.addEventListener('click',function(e){if(e.target===lb)shut()});d.addEventListener('keydown',function(e){if(e.key==='Escape'&&lb.classList.contains('is-open'))shut()})}function forms(){var form=q('[data-contact-form]'),qb=q('[data-submit-quote]'),ab=q('[data-book-appointment]');if(!form)return;form.addEventListener('submit',function(e){e.preventDefault()});if(qb)qb.addEventListener('click',function(){alert('Demo: Your quote request would be sent to 616 Autobody.')});if(ab)ab.addEventListener('click',function(){alert('Demo: Your appointment request would be added to the shop calendar.')})}function picker(){var x=q('#appointmentDate');if(x&&w.flatpickr)w.flatpickr(x,{minDate:'today',disableMobile:false,dateFormat:'Y-m-d',altInput:true,altFormat:'F j, Y'})}})();
+(function () {
+  'use strict';
+
+  const SELECTORS = {
+    header: '.site-header',
+    menuToggle: '[data-menu-toggle]',
+    drawerClose: '[data-drawer-close]',
+    drawerOverlay: '[data-drawer-overlay]',
+    mobileDrawer: '[data-mobile-drawer]',
+    mobileLinks: '[data-mobile-drawer] a',
+    internalLinks: 'a[href^="#"]',
+    lightbox: '[data-lightbox]',
+    lightboxImage: '[data-lightbox-image]',
+    lightboxClose: '[data-lightbox-close]',
+    lightboxTriggers: '[data-lightbox-src]',
+    quoteButton: '[data-submit-quote]',
+    appointmentButton: '[data-book-appointment]',
+    appointmentDate: '#appointmentDate'
+  };
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  document.addEventListener('DOMContentLoaded', function () {
+    setCurrentYear();
+    setActiveNavLinks();
+    normalizeSiteCtas();
+    initHeaderState();
+    initMobileDrawer();
+    initSmoothScroll();
+    initHeroFallbacks();
+    initHeroSlider();
+    initContactModeForm();
+    initGsapReveals();
+    initBeforeAfterAnimations();
+    initLightbox();
+    initContactForm();
+    initFlatpickr();
+  });
+
+  function setCurrentYear() {
+    document.querySelectorAll('[data-year]').forEach(function (el) {
+      el.textContent = String(new Date().getFullYear());
+    });
+  }
+
+  function setActiveNavLinks() {
+    const currentPage = document.body.getAttribute('data-page') || 'home';
+    document.querySelectorAll('[data-nav-page]').forEach(function (link) {
+      if (link.getAttribute('data-nav-page') === currentPage) {
+        link.classList.add('is-active');
+        link.setAttribute('aria-current', 'page');
+      }
+    });
+  }
+
+  function normalizeSiteCtas() {
+    const desktopButtons = [
+      { label: 'Book Appointment', href: 'contact.html?type=appointment#appointment' },
+      { label: 'Get Quote', href: 'contact.html?type=quote#appointment' },
+      { label: 'Sell Car', href: 'contact.html?type=sell#appointment' }
+    ];
+
+    document.querySelectorAll('.header-actions').forEach(function (actions) {
+      const menu = actions.querySelector('[data-menu-toggle]');
+      actions.querySelectorAll('a.btn').forEach(function (button) { button.remove(); });
+
+      desktopButtons.forEach(function (item) {
+        const link = document.createElement('a');
+        link.className = 'btn header-mode-btn';
+        link.href = item.href;
+        link.textContent = item.label;
+        actions.insertBefore(link, menu || null);
+      });
+    });
+
+    document.querySelectorAll('.drawer-cta-grid').forEach(function (grid) {
+      grid.innerHTML = '';
+      desktopButtons.forEach(function (item) {
+        const link = document.createElement('a');
+        link.className = 'btn btn-wide';
+        link.href = item.href;
+        link.textContent = item.label;
+        grid.appendChild(link);
+      });
+    });
+  }
+
+  function initHeaderState() {
+    const header = document.querySelector(SELECTORS.header);
+    if (!header) return;
+
+    const updateHeader = function () {
+      header.classList.toggle('is-scrolled', window.scrollY > 6);
+    };
+
+    updateHeader();
+    window.addEventListener('scroll', updateHeader, { passive: true });
+  }
+
+  function initMobileDrawer() {
+    const toggle = document.querySelector(SELECTORS.menuToggle);
+    const close = document.querySelector(SELECTORS.drawerClose);
+    const overlay = document.querySelector(SELECTORS.drawerOverlay);
+    const drawer = document.querySelector(SELECTORS.mobileDrawer);
+    const links = document.querySelectorAll(SELECTORS.mobileLinks);
+
+    if (!toggle || !drawer) return;
+
+    const openDrawer = function () {
+      document.body.classList.add('drawer-open');
+      toggle.setAttribute('aria-expanded', 'true');
+      drawer.setAttribute('aria-hidden', 'false');
+      const firstLink = drawer.querySelector('a, button');
+      if (firstLink) window.setTimeout(function () { firstLink.focus(); }, 80);
+    };
+
+    const closeDrawer = function () {
+      document.body.classList.remove('drawer-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      drawer.setAttribute('aria-hidden', 'true');
+      toggle.focus({ preventScroll: true });
+    };
+
+    toggle.addEventListener('click', openDrawer);
+    if (close) close.addEventListener('click', closeDrawer);
+    if (overlay) overlay.addEventListener('click', closeDrawer);
+
+    links.forEach(function (link) {
+      link.addEventListener('click', function () {
+        document.body.classList.remove('drawer-open');
+        toggle.setAttribute('aria-expanded', 'false');
+        drawer.setAttribute('aria-hidden', 'true');
+      });
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && document.body.classList.contains('drawer-open')) closeDrawer();
+    });
+  }
+
+  function initSmoothScroll() {
+    const header = document.querySelector(SELECTORS.header);
+    const headerOffset = function () { return header ? header.offsetHeight + 16 : 0; };
+
+    document.querySelectorAll(SELECTORS.internalLinks).forEach(function (link) {
+      link.addEventListener('click', function (event) {
+        const href = link.getAttribute('href');
+        if (!href || href === '#') return;
+        const target = document.querySelector(href);
+        if (!target) return;
+
+        event.preventDefault();
+        const top = target.getBoundingClientRect().top + window.scrollY - headerOffset();
+        window.scrollTo({ top: top, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+        history.pushState(null, '', href);
+      });
+    });
+  }
+
+  function initHeroFallbacks() {
+    const desktopHero = document.querySelector('.canva-hero-desktop img');
+    const mobileHero = document.querySelector('.canva-hero-mobile img');
+
+    if (desktopHero) {
+      desktopHero.onerror = function () {
+        desktopHero.onerror = null;
+        desktopHero.src = 'assets/hero-desktop.png';
+      };
+    }
+
+    if (mobileHero) {
+      mobileHero.onerror = function () {
+        mobileHero.onerror = null;
+        mobileHero.src = 'assets/hero-mobile.png';
+      };
+    }
+  }
+
+  function initHeroSlider() {
+    const slider = document.querySelector('[data-hero-slider]');
+    if (!slider) return;
+
+    const slides = Array.from(slider.querySelectorAll('[data-slide]'));
+    const dots = Array.from(slider.querySelectorAll('[data-slide-dot]'));
+    const prev = slider.querySelector('[data-slide-prev]');
+    const next = slider.querySelector('[data-slide-next]');
+    let current = 0;
+    let timer = null;
+
+    const showSlide = function (index) {
+      current = (index + slides.length) % slides.length;
+      slides.forEach(function (slide, slideIndex) {
+        const isActive = slideIndex === current;
+        slide.classList.toggle('is-active', isActive);
+        slide.setAttribute('aria-hidden', String(!isActive));
+      });
+      dots.forEach(function (dot, dotIndex) {
+        dot.classList.toggle('is-active', dotIndex === current);
+        dot.setAttribute('aria-selected', String(dotIndex === current));
+      });
+    };
+
+    const restartTimer = function () {
+      if (timer) window.clearInterval(timer);
+      timer = window.setInterval(function () { showSlide(current + 1); }, 5000);
+    };
+
+    if (prev) prev.addEventListener('click', function () { showSlide(current - 1); restartTimer(); });
+    if (next) next.addEventListener('click', function () { showSlide(current + 1); restartTimer(); });
+    dots.forEach(function (dot, dotIndex) {
+      dot.addEventListener('click', function () { showSlide(dotIndex); restartTimer(); });
+    });
+
+    showSlide(0);
+    if (!prefersReducedMotion) restartTimer();
+  }
+
+  function initContactModeForm() {
+    const form = document.querySelector('[data-contact-form]');
+    if (!form) return;
+
+    const formGrid = form.querySelector('.form-grid');
+    const actions = form.querySelector('.form-actions');
+    if (!formGrid) return;
+
+    const params = new URLSearchParams(window.location.search);
+    const initialMode = normalizeMode(params.get('type') || params.get('mode') || 'quote');
+
+    if (!form.querySelector('[data-form-mode-toggle]')) {
+      const modePanel = document.createElement('div');
+      modePanel.className = 'form-mode-panel';
+      modePanel.setAttribute('data-form-mode-toggle', '');
+      modePanel.innerHTML = `
+        <span class="client-note">Choose request type</span>
+        <div class="form-mode-buttons" role="group" aria-label="Choose form request type">
+          <button type="button" class="btn" data-form-mode="appointment">Book Appointment</button>
+          <button type="button" class="btn" data-form-mode="quote">Get Quote</button>
+          <button type="button" class="btn" data-form-mode="sell">Sell Car</button>
+        </div>
+        <p class="form-mode-help" data-form-mode-help></p>`;
+      form.insertBefore(modePanel, formGrid);
+    }
+
+    if (!document.getElementById('requestType')) {
+      const hidden = document.createElement('input');
+      hidden.type = 'hidden';
+      hidden.id = 'requestType';
+      hidden.name = 'requestType';
+      form.appendChild(hidden);
+    }
+
+    appendField(formGrid, 'vin', 'VIN', 'text', '1G1YZ23J9P5800001', 'vehicle-detail-field');
+    appendField(formGrid, 'licensePlate', 'License Plate', 'text', 'ABC 1234', 'vehicle-detail-field');
+    appendField(formGrid, 'mileage', 'Mileage', 'text', '85,000', 'sell-field');
+    appendField(formGrid, 'askingPrice', 'Asking Price / Payoff', 'text', '$8,500 or payoff amount', 'sell-field');
+    appendSelect(formGrid, 'preferredContact', 'Preferred Communication', ['Call', 'Text', 'Email'], 'vehicle-detail-field');
+    appendSelect(formGrid, 'dropOffNeeds', 'Drop-off Needs', ['Need drop-off help', 'Need rental coordination', 'Dropping vehicle off myself', 'Not sure yet'], 'appointment-field vehicle-detail-field');
+
+    if (!form.querySelector('[data-image-upload-grid]')) {
+      const uploadBlock = document.createElement('div');
+      uploadBlock.className = 'image-upload-block full';
+      uploadBlock.setAttribute('data-image-upload-grid', '');
+      uploadBlock.innerHTML = `
+        <div class="image-upload-heading">
+          <span class="client-note">Image upload placeholders</span>
+          <p>Final build can accept real uploads. These placeholders show the exact vehicle angles we would request for appointment, quote, or sell-car submissions.</p>
+        </div>
+        <div class="image-upload-grid">
+          ${createImageUpload('frontImage', 'Front image')}
+          ${createImageUpload('rearImage', 'Rear image')}
+          ${createImageUpload('leftImage', 'Left side image')}
+          ${createImageUpload('rightImage', 'Right side image')}
+        </div>`;
+      formGrid.appendChild(uploadBlock);
+    }
+
+    form.querySelectorAll('[data-form-mode]').forEach(function (button) {
+      button.addEventListener('click', function () {
+        setFormMode(normalizeMode(button.getAttribute('data-form-mode')));
+      });
+    });
+
+    setFormMode(initialMode);
+
+    function setFormMode(mode) {
+      const requestType = document.getElementById('requestType');
+      if (requestType) requestType.value = mode;
+      form.setAttribute('data-active-form-mode', mode);
+
+      form.querySelectorAll('[data-form-mode]').forEach(function (button) {
+        const active = button.getAttribute('data-form-mode') === mode;
+        button.classList.toggle('is-active', active);
+        button.setAttribute('aria-pressed', String(active));
+      });
+
+      const help = form.querySelector('[data-form-mode-help]');
+      if (help) {
+        help.textContent = mode === 'appointment'
+          ? 'Appointment mode prioritizes service type, preferred date/time, drop-off needs, contact preference, and vehicle images.'
+          : mode === 'sell'
+            ? 'Sell Car mode collects vehicle details, VIN, mileage, asking price or payoff notes, condition notes, and four required vehicle-angle images.'
+            : 'Quote mode collects damage details, service type, VIN/license information, preferred contact method, and four damage/vehicle images.';
+      }
+
+      const serviceLabel = document.querySelector('label[for="serviceType"]');
+      const message = document.getElementById('message');
+      const submitQuote = document.querySelector('[data-submit-quote]');
+      const bookAppointment = document.querySelector('[data-book-appointment]');
+
+      if (serviceLabel) serviceLabel.textContent = mode === 'sell' ? 'Vehicle Condition' : 'Service Type';
+      if (message) {
+        message.placeholder = mode === 'appointment'
+          ? 'Tell us what you need looked at, where the damage is, and any scheduling details.'
+          : mode === 'sell'
+            ? 'Tell us about the vehicle condition, known damage, title status, payoff, and anything else we should know.'
+            : 'Tell us what happened, where the damage is, and whether insurance is involved.';
+      }
+      if (submitQuote) submitQuote.textContent = mode === 'sell' ? 'Submit Sell Car Request' : mode === 'appointment' ? 'Submit Appointment Request' : 'Submit Quote Request';
+      if (bookAppointment) bookAppointment.textContent = mode === 'sell' ? 'Request Vehicle Review' : 'Book Appointment';
+    }
+  }
+
+  function normalizeMode(mode) {
+    const cleaned = String(mode || '').toLowerCase().trim();
+    if (cleaned === 'appointment' || cleaned === 'book') return 'appointment';
+    if (cleaned === 'sell' || cleaned === 'sell-car' || cleaned === 'sellcar') return 'sell';
+    return 'quote';
+  }
+
+  function appendField(grid, id, label, type, placeholder, className) {
+    if (document.getElementById(id)) return;
+    const wrap = document.createElement('div');
+    wrap.className = 'form-field ' + (className || '');
+    wrap.innerHTML = `<label for="${id}">${label}</label><input id="${id}" name="${id}" type="${type}" placeholder="${placeholder}">`;
+    const messageField = document.getElementById('message')?.closest('.form-field');
+    grid.insertBefore(wrap, messageField || null);
+  }
+
+  function appendSelect(grid, id, label, options, className) {
+    if (document.getElementById(id)) return;
+    const wrap = document.createElement('div');
+    wrap.className = 'form-field ' + (className || '');
+    wrap.innerHTML = `<label for="${id}">${label}</label><select id="${id}" name="${id}"><option value="">Select one</option>${options.map(function (option) { return `<option>${option}</option>`; }).join('')}</select>`;
+    const messageField = document.getElementById('message')?.closest('.form-field');
+    grid.insertBefore(wrap, messageField || null);
+  }
+
+  function createImageUpload(id, label) {
+    return `<label class="image-upload-card" for="${id}"><span>${label}</span><small>Click to attach image</small><input id="${id}" name="${id}" type="file" accept="image/*"></label>`;
+  }
+
+  function initGsapReveals() {
+    if (prefersReducedMotion || typeof window.gsap === 'undefined') return;
+    if (typeof window.ScrollTrigger !== 'undefined') window.gsap.registerPlugin(window.ScrollTrigger);
+
+    document.querySelectorAll('[data-reveal]').forEach(function (item) {
+      window.gsap.fromTo(item, { autoAlpha: 0, y: 34, scale: 0.985 }, {
+        autoAlpha: 1,
+        y: 0,
+        scale: 1,
+        duration: 0.75,
+        ease: 'power2.out',
+        scrollTrigger: typeof window.ScrollTrigger !== 'undefined' ? { trigger: item, start: 'top 82%', once: true } : undefined
+      });
+    });
+  }
+
+  function initBeforeAfterAnimations() {
+    if (prefersReducedMotion || typeof window.gsap === 'undefined' || typeof window.ScrollTrigger === 'undefined') return;
+    window.gsap.registerPlugin(window.ScrollTrigger);
+
+    document.querySelectorAll('[data-ba-card]').forEach(function (card) {
+      const beforeImg = card.querySelector('.ba-before img');
+      const afterImg = card.querySelector('.ba-after img');
+      if (!beforeImg || !afterImg) return;
+
+      window.gsap.set(beforeImg, { yPercent: 100 });
+      window.gsap.set(afterImg, { yPercent: -100 });
+      window.gsap.timeline({ scrollTrigger: { trigger: card, start: 'top 78%', once: true } })
+        .to(beforeImg, { yPercent: 0, duration: 1.05, ease: 'power3.out' }, 0)
+        .to(afterImg, { yPercent: 0, duration: 1.05, ease: 'power3.out' }, 0.08);
+    });
+  }
+
+  function initLightbox() {
+    const lightbox = document.querySelector(SELECTORS.lightbox);
+    const lightboxImage = document.querySelector(SELECTORS.lightboxImage);
+    const close = document.querySelector(SELECTORS.lightboxClose);
+    if (!lightbox || !lightboxImage) return;
+
+    let lastFocused = null;
+    const openLightbox = function (src, alt) {
+      lastFocused = document.activeElement;
+      lightboxImage.src = src;
+      lightboxImage.alt = alt || 'Gallery image';
+      lightbox.classList.add('is-open');
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      if (close) close.focus();
+    };
+    const closeLightbox = function () {
+      lightbox.classList.remove('is-open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      lightboxImage.removeAttribute('src');
+      document.body.style.overflow = '';
+      if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus({ preventScroll: true });
+    };
+
+    document.querySelectorAll(SELECTORS.lightboxTriggers).forEach(function (trigger) {
+      trigger.addEventListener('click', function () {
+        const img = trigger.querySelector('img');
+        const src = trigger.getAttribute('data-lightbox-src') || (img ? img.src : '');
+        const alt = trigger.getAttribute('data-lightbox-alt') || (img ? img.alt : '');
+        if (src) openLightbox(src, alt);
+      });
+    });
+    if (close) close.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', function (event) { if (event.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', function (event) { if (event.key === 'Escape' && lightbox.classList.contains('is-open')) closeLightbox(); });
+  }
+
+  function initContactForm() {
+    const quoteButton = document.querySelector(SELECTORS.quoteButton);
+    const appointmentButton = document.querySelector(SELECTORS.appointmentButton);
+    const form = document.querySelector('[data-contact-form]');
+    if (!form) return;
+
+    form.addEventListener('submit', function (event) { event.preventDefault(); });
+    if (quoteButton) quoteButton.addEventListener('click', function () { alert('Demo: This request would be sent to 616 Autobody.'); });
+    if (appointmentButton) appointmentButton.addEventListener('click', function () { alert('Demo: This appointment/review request would be added to the shop workflow.'); });
+  }
+
+  function initFlatpickr() {
+    const dateInput = document.querySelector(SELECTORS.appointmentDate);
+    if (!dateInput || typeof window.flatpickr === 'undefined') return;
+
+    window.flatpickr(dateInput, {
+      minDate: 'today',
+      disableMobile: false,
+      dateFormat: 'Y-m-d',
+      altInput: true,
+      altFormat: 'F j, Y'
+    });
+  }
+})();
